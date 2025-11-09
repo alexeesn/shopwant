@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | ShopWant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Shop<span>Want</span></div>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="cart.html" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+
+      <div class="profile-dropdown" id="profileDropdown">
+        <div class="avatar">
+          <img src="images/profile.jpg" alt="Avatar" />
+        </div>
+        <div class="dropdown-menu">
+          <a href="profile.html">Profile</a>
+          <a href="orders.html">Track Orders</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFILE SECTION -->
+  <section class="profile-section">
+    <div class="profile-container">
+      <h2><i class="fa-solid fa-user"></i> My Profile</h2>
+      <div class="profile-info">
+        <div class="info-item"><strong>Name:</strong> <span id="userName">Alexis Teodsoio</span></div>
+        <div class="info-item"><strong>Email:</strong> <span id="userEmail">alexis@example.com</span></div>
+        <div class="info-item"><strong>Phone:</strong> <span id="userPhone">09123456789</span></div>
+        <div class="info-item"><strong>Address:</strong> <span id="userAddress">Caloocan City, Philippines</span></div>
+      </div>
+      <button id="editProfileBtn" class="btn">Edit Information</button>
+    </div>
+  </section>
+
+  <script>
+    // Edit Profile Button Function
+    const editBtn = document.getElementById('editProfileBtn');
+    editBtn.addEventListener('click', () => {
+      const name = prompt("Enter your name:", document.getElementById('userName').textContent);
+      const email = prompt("Enter your email:", document.getElementById('userEmail').textContent);
+      const phone = prompt("Enter your phone:", document.getElementById('userPhone').textContent);
+      const address = prompt("Enter your address:", document.getElementById('userAddress').textContent);
+
+      if(name) document.getElementById('userName').textContent = name;
+      if(email) document.getElementById('userEmail').textContent = email;
+      if(phone) document.getElementById('userPhone').textContent = phone;
+      if(address) document.getElementById('userAddress').textContent = address;
+    });
+  </script>
+
+</body>
+</html>

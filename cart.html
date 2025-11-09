@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopWant - Cart</title>
+  <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="logo">Shop<span>Want</span></div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="cart.html" class="cart-icon" id="cartIcon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <div class="header-btns">
+        <a href="login.html" class="btn login">Log In</a>
+        <a href="register.html" class="btn register">Register</a>
+      </div>
+    </div>
+
+        <!-- Login/Register Buttons -->
+    <div class="header-btns" id="authBtns">
+      <a href="login.html" class="btn login">Log In</a>
+      <a href="register.html" class="btn register">Register</a>
+    </div>
+
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Avatar">
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Profile</a>
+        <a href="#">Track Order</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Cart Section ===== -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <h1>Your Shopping Cart</h1>
+      <p>Review your items and proceed to checkout</p>
+    </div>
+
+    <div class="cart-layout">
+      <div class="cart-items" id="cartPageItems">
+        <!-- Cart items will be dynamically loaded here -->
+      </div>
+
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartPageSubtotal">₱0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax</span>
+          <span id="cartPageTax">₱0.00</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="cartPageTotal">₱0.00</span>
+        </div>
+        <button class="btn checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        <a href="products.html" class="continue-shopping">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Shop<span>Want</span></h3>
+        <p>Your one-stop shop for premium clothing and accessories. Discover stylish outfits that fit your lifestyle.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/ian.latonero"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopWant. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

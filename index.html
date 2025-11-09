@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <title>ShopWant - Premium Products</title>
+</head>
+<body>
+  <header class="header">
+  <div class="logo">Shop<span>Want</span></div>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <a href="cart.html" class="cart-icon" id="cartIcon">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count">0</span>
+    </a>
+
+    <!-- Login/Register Buttons -->
+    <div class="header-btns" id="authBtns">
+      <a href="login.html" class="btn login">Log In</a>
+      <a href="register.html" class="btn register">Register</a>
+    </div>
+
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Avatar">
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Profile</a>
+        <a href="track-orders.html">Track Order</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+
+
+</header>
+
+
+
+  <main class="hero-section">      
+    <div class="hero-container">
+      <h1>WELCOME TO SHOP <span>WANT</span></h1>
+      <p>Discover premium products that match your desires. From fashion to electronics, find everything you want at unbeatable prices.</p>
+      <a href="products.html" class="cta-button">SHOP NOW</a>
+    </div>
+  </main>
+
+  <div class="container">
+    <section class="featured-products">
+      <h2>Featured Clothing</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./img//product-img/black t-shirt thumb.png" alt="Black Shirt">
+          <div class="product-info">
+            <h3>Manfinity Homme Loose Fit Men's</h3>
+            <p>A timeless essential for any wardrobe, perfect for both casual and formal occasions.</p>
+            <div class="price">₱599</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./img/product-img/leahter thumb.png" alt="Denim Jacket">
+          <div class="product-info">
+            <h3>Leather Jacket</h3>
+            <p>Versatile and stylish, this leather jacket adds a cool edge to any outfit.</p>
+            <div class="price">₱1,500</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./img/product-img/hoodie thumb.png">
+          <div class="product-info">
+            <h3>Extreme Hoodie</h3>
+            <p>Y2k hoodie. good for streetwear or normal outfit</p>
+            <div class="price">₱1,000</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-body">
+        <div class="modal-left">
+          <div class="image-gallery">
+            <img id="modal-main-img" src="" alt="Product Image">
+            <div class="thumbnails" id="modal-thumbnails">
+              <!-- Thumbnails will be populated by JS -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-right">
+          <h3 id="modal-title">Product Name</h3>
+          <p id="modal-description">Product description will appear here.</p>
+          <p id="modal-price">₱0.00</p>
+          
+          <div class="product-details">
+            <h4>Product Details</h4>
+            <p><strong>Material:</strong> <span id="modal-material">Cotton</span></p>
+            <p><strong>Fit:</strong> <span id="modal-fit">Regular</span></p>
+            <p><strong>Care Instructions:</strong> <span id="modal-care">Machine wash cold, tumble dry low</span></p>
+            <p><strong>Availability:</strong> <span id="modal-availability">In Stock</span></p>
+          </div>
+
+          <label for="size">Size:</label>
+          <select id="size">
+            <option value="S">Small (S)</option>
+            <option value="M">Medium (M)</option>
+            <option value="L">Large (L)</option>
+            <option value="XL">Extra Large (XL)</option>
+          </select>
+
+          <button id="addToCartModal" class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Product added to cart!</span>
+  </div>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Shop<span>Want</span></h3>
+        <p>Your one-stop shop for premium clothing and accessories. Discover stylish outfits that fit your lifestyle.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/ian.latonero"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopWant. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <title>ShopWant - Products Catalog</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Shop<span>Want</span></div>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="cart.html" class="cart-icon" id="cartIcon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+
+        <!-- Login/Register Buttons -->
+    <div class="header-btns" id="authBtns">
+      <a href="login.html" class="btn login">Log In</a>
+      <a href="register.html" class="btn register">Register</a>
+    </div>
+
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Avatar">
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Profile</a>
+        <a href="track-orders.html">Track Order</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="catalog-section">
+    <div class="container">
+      
+      <h1>Our Products Catalog</h1>
+      <p>Browse our full collection of premium clothing and accessories. Find your perfect style at unbeatable prices.</p>
+      
+      <!-- Filter/Sort Options -->
+      <div class="catalog-filters">
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Search products...">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="tops">Tops</option>
+          <option value="bottoms">Bottoms</option>
+          <option value="dresses">Dresses</option>
+          <option value="outerwear">Outerwear</option>
+        </select>
+        
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option value="name">Name</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- Product Cards -->
+        <div class="product-card" data-category="tops">
+          <img src="./img/product-img/black t-shirt thumb.png" alt="black Shirt">
+          <div class="product-info">
+            <h3>Manfinity Homme Loose Fit Men's </h3>
+            <p>A timeless essential for any wardrobe, perfect for both casual and formal occasions.</p>
+            <div class="price">₱599</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="outerwear">
+          <img src="./img/product-img/leahter thumb.png" alt="Denim Jacket">
+          <div class="product-info">
+            <h3>Leather Jacket</h3>
+            <p>Versatile and stylish, this leather jacket adds a cool edge to any outfit.</p>
+            <div class="price">₱1,500</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="dresses">
+          <img src="./img/product-img/hoodie thumb.png">
+          <div class="product-info">
+            <h3>Extreme Hoodie</h3>
+            <p>LY2k hoodie. good for streetwear or normal outfit</p>
+            <div class="price">₱1,000</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="tops">
+          <img src="./img/product-img/ch thumb.png" alt="Graphic Tee">
+          <div class="product-info">
+            <h3>Graphic Tee</h3>
+            <p>Express yourself with our comfortable and stylish graphic t-shirts.</p>
+            <div class="price">₱799</div>
+            <a href="#" class="btn view-details">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-body">
+        <div class="modal-left">
+          <div class="image-gallery">
+            <img id="modal-main-img" src="" alt="Product Image">
+            <div class="thumbnails" id="modal-thumbnails">
+              <!-- Thumbnails will be populated by JS -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-right">
+          <h3 id="modal-title">Product Name</h3>
+          <p id="modal-description">Product description will appear here.</p>
+          <p id="modal-price">₱0.00</p>
+          
+          <div class="product-details">
+            <h4>Product Details</h4>
+            <p><strong>Material:</strong> <span id="modal-material">Cotton</span></p>
+            <p><strong>Fit:</strong> <span id="modal-fit">Regular</span></p>
+            <p><strong>Care Instructions:</strong> <span id="modal-care">Machine wash cold, tumble dry low</span></p>
+            <p><strong>Availability:</strong> <span id="modal-availability">In Stock</span></p>
+          </div>
+
+          <label for="size">Size:</label>
+          <select id="size">
+            <option value="S">Small (S)</option>
+            <option value="M">Medium (M)</option>
+            <option value="L">Large (L)</option>
+            <option value="XL">Extra Large (XL)</option>
+          </select>
+
+          <button id="addToCartModal" class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Product added to cart!</span>
+  </div>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Shop<span>Want</span></h3>
+        <p>Your one-stop shop for premium clothing and accessories. Discover stylish outfits that fit your lifestyle.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/ian.latonero"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopWant. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

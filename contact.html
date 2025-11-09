@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - ShopWant</title>
+  <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="logo">Shop<span>Want</span></div>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="cart.html" class="cart-icon" id="cartIcon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+
+        <!-- Login/Register Buttons -->
+    <div class="header-btns" id="authBtns">
+      <a href="login.html" class="btn login">Log In</a>
+      <a href="register.html" class="btn register">Register</a>
+    </div>
+
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Avatar">
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Profile</a>
+        <a href="#">Track Order</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="contact-hero">
+    <h1>Contact Us</h1>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Have questions or feedback? We’d love to hear from you. Fill out the form below or reach out through our contact details.</p>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Caloocan City, Philippines</div>
+        <div><i class="fas fa-phone"></i> +63 912 345 6789</div>
+        <div><i class="fas fa-envelope"></i> support@shopwant.com</div>
+        <div><i class="fas fa-clock"></i> Mon - Fri: 9AM - 6PM</div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form action="send_contact.php" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Shop<span>Want</span></h3>
+        <p>Your one-stop shop for premium clothing and accessories. Discover stylish outfits that fit your lifestyle.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/ian.latonero"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+  </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopWant. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

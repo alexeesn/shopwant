@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopWant | Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <h2>Shop<span>Want</span></h2>
+      </div>
+      <button class="close-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="menu">
+      <li class="active"><i class="fa-solid fa-chart-line"></i><a href="#" data-section="dashboardSection">Dashboard</a></li>
+      <li><i class="fa-solid fa-shirt"></i><a href="#" data-section="productsSection">Products</a></li>
+      <li><i class="fa-solid fa-user"></i><a href="#" data-section="usersSection">Users</a></li>
+      <li><i class="fa-solid fa-box"></i><a href="#" data-section="ordersSection">Orders</a></li>
+      <li><i class="fa-solid fa-plus"></i><a href="#" data-section="addProductSection">Add Product</a></li>
+      <li><i class="fa-solid fa-right-from-bracket"></i><a href="#">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== OVERLAY ===== -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="main-content">
+    <header>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <h1 id="pageTitle">Dashboard</h1>
+      <div class="admin-info">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Admin">
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <!-- ===== DASHBOARD SECTION ===== -->
+    <section id="dashboardSection">
+      <div class="cards">
+        <div class="card">
+          <h3>Total Products</h3>
+          <p>128</p>
+        </div>
+        <div class="card">
+          <h3>Total Orders</h3>
+          <p>312</p>
+        </div>
+        <div class="card">
+          <h3>Total Users</h3>
+          <p>54</p>
+        </div>
+      </div>
+
+      <section class="table-section">
+        <h2>Recent Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1023</td>
+              <td>Alexis Teodsoio</td>
+              <td>Nov 9, 2025</td>
+              <td><span class="status delivered">Delivered</span></td>
+              <td>₱1,500</td>
+            </tr>
+            <tr>
+              <td>#1024</td>
+              <td>John Cruz</td>
+              <td>Nov 8, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>₱750</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section id="productsSection" style="display:none;">
+      <div class="table-section">
+        <h2>Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Featured</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#P101</td>
+              <td>Graphic Tee</td>
+              <td>₱500</td>
+              <td>50</td>
+              <td><span class="featured-badge yes">Yes</span></td>
+              <td><span class="status available">Available</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="action-btn edit" onclick="editProduct('P101')" title="Edit">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                  <button class="action-btn delete" onclick="deleteProduct('P101')" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#P102</td>
+              <td>Cozy Hoodie</td>
+              <td>₱1,200</td>
+              <td>20</td>
+              <td><span class="featured-badge no">No</span></td>
+              <td><span class="status low-stock">Low Stock</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="action-btn edit" onclick="editProduct('P102')" title="Edit">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                  <button class="action-btn delete" onclick="deleteProduct('P102')" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#P103</td>
+              <td>Classic White Shirt</td>
+              <td>₱800</td>
+              <td>0</td>
+              <td><span class="featured-badge yes">Yes</span></td>
+              <td><span class="status out-of-stock">Out of Stock</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="action-btn edit" onclick="editProduct('P103')" title="Edit">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                  <button class="action-btn delete" onclick="deleteProduct('P103')" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== USERS SECTION ===== -->
+    <section id="usersSection" style="display:none;">
+      <div class="table-section">
+        <h2>Users</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#U101</td>
+              <td>Alexis Teodsoio</td>
+              <td>alexis@email.com</td>
+              <td>Admin</td>
+            </tr>
+            <tr>
+              <td>#U102</td>
+              <td>John Cruz</td>
+              <td>john@email.com</td>
+              <td>Customer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== ORDERS SECTION ===== -->
+    <section id="ordersSection" style="display:none;">
+      <div class="table-section">
+        <h2>Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1023</td>
+              <td>Alexis Teodsoio</td>
+              <td>Nov 9, 2025</td>
+              <td><span class="status delivered">Delivered</span></td>
+              <td>₱1,500</td>
+            </tr>
+            <tr>
+              <td>#1024</td>
+              <td>John Cruz</td>
+              <td>Nov 8, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>₱750</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== ADD PRODUCT SECTION ===== -->
+    <section id="addProductSection" style="display:none;">
+      <div class="table-section">
+        <h2>Add New Product</h2>
+        <form id="addProductForm" class="add-product-form">
+          <div class="form-group">
+            <label for="productImage">Product Image</label>
+            <input type="file" id="productImage" accept="image/*" required>
+          </div>
+
+          <div class="form-group">
+            <label for="productTitle">Product Title</label>
+            <input type="text" id="productTitle" placeholder="Enter product title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <textarea id="productDescription" placeholder="Enter product description" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="productDetails">Product Details</label>
+            <textarea id="productDetails" placeholder="Enter product details (size, color, material)" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="productPrice">Price (₱)</label>
+            <input type="number" id="productPrice" placeholder="Enter product price" required>
+          </div>
+
+          <div class="form-group">
+            <label for="productStock">Stock Quantity</label>
+            <input type="number" id="productStock" placeholder="Enter stock quantity" required>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="featuredProduct">
+              <span class="checkmark"></span>
+              Mark as Featured Product
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary submit-btn">
+              <i class="fa-solid fa-plus"></i> Add Product
+            </button>
+            <button type="button" class="btn btn-outline" onclick="resetForm()">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== EDIT PRODUCT SECTION ===== -->
+    <section id="editProductSection" style="display:none;">
+      <div class="table-section">
+        <h2>Edit Product</h2>
+        <form id="editProductForm" class="add-product-form">
+          <div class="form-group">
+            <label for="editProductImage">Product Image</label>
+            <div class="image-preview">
+              <img id="editImagePreview" src="" alt="Product Preview">
+              <input type="file" id="editProductImage" accept="image/*">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductTitle">Product Title</label>
+            <input type="text" id="editProductTitle" placeholder="Enter product title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductDescription">Product Description</label>
+            <textarea id="editProductDescription" placeholder="Enter product description" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductDetails">Product Details</label>
+            <textarea id="editProductDetails" placeholder="Enter product details (size, color, material)" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductPrice">Price (₱)</label>
+            <input type="number" id="editProductPrice" placeholder="Enter product price" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductStock">Stock Quantity</label>
+            <input type="number" id="editProductStock" placeholder="Enter stock quantity" required>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="editFeaturedProduct">
+              <span class="checkmark"></span>
+              Mark as Featured Product
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductStatus">Status</label>
+            <select id="editProductStatus" required>
+              <option value="available">Available</option>
+              <option value="out-of-stock">Out of Stock</option>
+              <option value="discontinued">Discontinued</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary submit-btn">
+              <i class="fa-solid fa-save"></i> Update Product
+            </button>
+            <button type="button" class="btn btn-outline" onclick="goBackToProducts()">
+              <i class="fa-solid fa-arrow-left"></i> Back to Products
+            </button>
+            <button type="button" class="btn btn-danger" onclick="deleteCurrentProduct()">
+              <i class="fa-solid fa-trash"></i> Delete Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="admin-script.js"></script>
+
+</body>
+</html>
